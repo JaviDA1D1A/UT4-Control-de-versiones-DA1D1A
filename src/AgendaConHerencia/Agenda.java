@@ -37,7 +37,7 @@ public class Agenda {
 
 		Utilidades.mostrarOpciones();
 
-		while (opcion != 7) {
+		while (opcion != 8) {
 
 			switch (opcion) {
 			case 1:
@@ -74,19 +74,17 @@ public class Agenda {
 
 				break;
 
-			case 7: // Salir
+			case 7:
+			    Utilidades.buscarPorNombre(personas, sc);
+			    break;
 
-				break;
-
-			}
-
-			Utilidades.mostrarOpciones();
-
-			opcion = Integer.parseInt(sc.nextLine());
+			case 8: // Salir (antes era el 7)
+			    System.out.println("Saliendo de la agenda...");
+			    break;
 
 		}
 
 		sc.close();
+		}
 	}
-
 }

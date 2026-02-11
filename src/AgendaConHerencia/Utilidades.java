@@ -13,8 +13,8 @@ public class Utilidades {
 		System.out.println("4. Listar todos los datos de los contactos");
 		System.out.println("5. Mostrar cuantas empresas hay de cada sector");
 		System.out.println("6. Mostrar los datos ordenados por orden alfabético de email");
-		System.out.println("7. Salir");
-		System.out.println();
+		System.out.println("7. BUSCAR persona por nombre"); // Nueva opción
+		System.out.println("8. Salir"); // Cambiamos el salir al 8
 
 	}
 
@@ -156,4 +156,24 @@ public class Utilidades {
 		}
 	}
 
+	// Método nuevo para buscar contacto persona por nombre
+	public static void buscarPorNombre(ArrayList<Persona> personas, Scanner sc) {
+	    System.out.print("Introduce el nombre a buscar: ");
+	    String busqueda = sc.nextLine().toLowerCase();
+	    boolean encontrado = false;
+
+	    System.out.println("\n--- Resultados de búsqueda ---");
+	    
+	    for (Persona p : personas) {
+	        if (p.getNombre().toLowerCase().contains(busqueda)) {
+	            p.mostrarDatos();
+	            encontrado = true;
+	        }
+	    }
+	    
+	    if (!encontrado) {
+	        System.out.println("No se encontraron personas con ese nombre.");
+	    }
+	    System.out.println("------------------------------");
+	}
 }
