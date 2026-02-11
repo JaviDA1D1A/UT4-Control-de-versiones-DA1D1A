@@ -80,7 +80,8 @@ public class Utilidades {
 
 		sc.close();
 	}
-
+	
+	// Código CORREGIDO en Utilidades.java
 	public static void borrarContacto(ArrayList<Persona> personas, ArrayList<Empresa> empresas) {
 
 		int borrarId = 0;
@@ -94,12 +95,14 @@ public class Utilidades {
 			if (personas.get(i).getId() == borrarId) {
 				personas.remove(i);
 			}
-		}
-		for (int j = 0; j < empresas.size(); j++) {
-			if (empresas.get(j).getId() == borrarId) {
-				personas.remove(j);
-			}
-		}
+		  }
+			for (int j = 0; j < empresas.size(); j++) {
+		        if (empresas.get(j).getId() == borrarId) {
+		            empresas.remove(j); // <--- CORREGIDO
+		            System.out.println("Empresa borrada correctamente.");
+		            break; // Importante para salir del bucle
+		        }
+		    }
 
 		sc.close();
 
