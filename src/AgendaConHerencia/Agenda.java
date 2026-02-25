@@ -71,7 +71,9 @@ public class Agenda {
 				break;
 
 			case 6: // Mostrar los datos ordenados por orden alfabético de email
-
+				
+				Utilidades.mostrarOrdenadosPorEmail(personas, empresas);
+				
 				break;
 
 			case 7: // Salir
