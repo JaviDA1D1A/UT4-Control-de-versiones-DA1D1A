@@ -155,6 +155,27 @@ public class Utilidades {
 			System.out.println(empresas.get(i).getSector() + " " + contador + "\n");
 		}
 	}
+	
+public static void mostrarOrdenadosPorEmail(ArrayList<Persona> personas, ArrayList<Empresa> empresas) {
+		
+		// 1. Creamos una lista combinada de la clase padre (asumo que se llama Contacto)
+		ArrayList<Contacto> todosLosContactos = new ArrayList<>();
+		
+		// 2. Unimos ambas listas para poder ordenarlos todos juntos
+		todosLosContactos.addAll(personas);
+		todosLosContactos.addAll(empresas);
+		
+		// 3. Ordenamos la lista combinada usando una expresión Lambda. 
+		// compareToIgnoreCase compara los textos sin importar si hay mayúsculas o minúsculas.
+		todosLosContactos.sort((c1, c2) -> c1.getEmail().compareToIgnoreCase(c2.getEmail()));
+		
+		// 4. Mostramos los datos ya ordenados
+		System.out.println("\n--- Contactos ordenados por email ---");
+		for (int i = 0; i < todosLosContactos.size(); i++) {
+			todosLosContactos.get(i).mostrarDatos();
+		}
+		System.out.println("-------------------------------------\n");
+	}
 
 	// Método nuevo para buscar contacto persona por nombre
 	public static void buscarPorNombre(ArrayList<Persona> personas, Scanner sc) {
