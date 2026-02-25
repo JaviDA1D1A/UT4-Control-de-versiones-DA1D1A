@@ -2,12 +2,14 @@ package AgendaConHerencia;
 
 public abstract class Contacto {
 
+	private static int autoid=0; // Creo un atributo de clase (static) con valor = 0
 	private int id;
 	private int telefono;
 	private String email;
 
 	public Contacto(int id, int telefono, String email) {
-		this.id = id;
+		autoid++; 	// Aumento el valor del contador en una unidad
+		this.id = autoid;	// Asigno el valor al objeto
 		this.telefono = telefono;
 		this.email = email;
 	}
