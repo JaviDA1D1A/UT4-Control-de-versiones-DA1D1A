@@ -165,7 +165,7 @@ public class Utilidades {
 	    System.out.println("\n--- Resultados de búsqueda ---");
 	    
 	    for (Persona p : personas) {
-	        if (p.getNombre().toLowerCase().contains(busqueda)) {
+	        if (p.getNombreCompleto().toLowerCase().contains(busqueda)) {
 	            p.mostrarDatos();
 	            encontrado = true;
 	        }

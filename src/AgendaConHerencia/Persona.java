@@ -11,29 +11,24 @@ public class Persona extends Contacto {
 		this.apellidos = apellidos;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getApellidos() {
-		return apellidos;
 	}
 
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 	
+
+	public String getNombreCompleto() {
+	    return this.nombre + " " + this.apellidos;
+	}
+
 	@Override
 	public void mostrarDatos() {
-		System.out.println("===Contacto Persona===");
-		super.mostrarDatos();
-		System.out.println("Nombre: " + getNombre());
-		System.out.println("Apellidos: " + getApellidos());
-		System.out.println();
+	    System.out.println("=== Contacto Persona: " + getNombreCompleto() + " ===");
+	    super.mostrarDatos();
+	    System.out.println();
 	}
 
 }
